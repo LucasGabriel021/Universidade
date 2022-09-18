@@ -1,128 +1,128 @@
-//Nome completo: Lucas Gabriel Gomes de Oliveira
-//Matricúla: UC21103713
-//Ciência da Computação
 
-//Projeto de identificação dos clientes de um cinema em Brasília
+
+
+
+//Projeto de identificaÃ§Ã£o dos clientes de um cinema em BrasÃ­lia
 
 //Bibliotecas logo abaixo:
-#include <stdio.h>  //comandos de entrada e saída. Exenplo usado: printf e scanf 
-#include <stdlib.h>  //funções de uso geral uso do system("pause") por exemplo
-#include <string.h>  //manipula strings. Exemplo usado no código: compara duas strings
+#include <stdio.h>  //comandos de entrada e saÃ­da. Exenplo usado: printf e scanf 
+#include <stdlib.h>  //funÃ§Ãµes de uso geral uso do system("pause") por exemplo
+#include <string.h>  //manipula strings. Exemplo usado no cÃ³digo: compara duas strings
 #include <locale.h> //biblioteca que permite acentuar palavras
 
-//Função principal abaixo:
+//FunÃ§Ã£o principal abaixo:
 int main(){
 	
-//Declaração das variáveis abaixo: A escolha do nome das variáveis foi escolhidas de acordo com que fique com um melhor entendimento para quem irá ler e para o próprio programador para que ele nao se perca nos diversos comandos abaixo.
-int sessao, total_expectadores, i, idade, quantidadeM = 0, quantidadeF = 0, crianca = 0, adolescente = 0, adulto = 0, idoso = 0, maioridadeM, maioridadeF, lucro; //Variáveis do tipo inteiro %d
-char sexo, filme[77]; //Variáveis do tipo caractere %s
+//DeclaraÃ§Ã£o das variÃ¡veis abaixo: A escolha do nome das variÃ¡veis foi escolhidas de acordo com que fique com um melhor entendimento para quem irÃ¡ ler e para o prÃ³prio programador para que ele nao se perca nos diversos comandos abaixo.
+int sessao, total_expectadores, i, idade, quantidadeM = 0, quantidadeF = 0, crianca = 0, adolescente = 0, adulto = 0, idoso = 0, maioridadeM, maioridadeF, lucro; //VariÃ¡veis do tipo inteiro %d
+char sexo, filme[77]; //VariÃ¡veis do tipo caractere %s
 	
-//Entrada e saída dos dados abaixo:
+//Entrada e saÃ­da dos dados abaixo:
 
 //Comandos adicionais    
 	setlocale(LC_ALL, "Portuguese"); //Permite acentuar as palavras.
-    system("color A"); //Mudar de cor as palavras na hora da execução.
+    system("color A"); //Mudar de cor as palavras na hora da execuÃ§Ã£o.
     
     
-//Informações adicionais na tela. Saída de informações  
+//InformaÃ§Ãµes adicionais na tela. SaÃ­da de informaÃ§Ãµes  
              printf("|--------------------------------------------------------------------------------------->|\n");
-             printf("->Bem vindo ao cinema de Brásilia!!\n");
-             printf("\n->Aqui a mágica acontece!!");  
-			 printf("\n->Hoje os ingressos estão por meia entrada, hoje qualquer pessoa paga apenas R$ 7,00\n");
-			 printf("\n->Hoje o combo com pipoca e refrigerante é por apenas R$ 21,00\n");
+             printf("->Bem vindo ao cinema de BrÃ¡silia!!\n");
+             printf("\n->Aqui a mÃ¡gica acontece!!");  
+			 printf("\n->Hoje os ingressos estÃ£o por meia entrada, hoje qualquer pessoa paga apenas R$ 7,00\n");
+			 printf("\n->Hoje o combo com pipoca e refrigerante Ã© por apenas R$ 21,00\n");
              printf("|--------------------------------------------------------------------------------------->|\n\n");
-             printf("\n-Insira abaixo os dados dos clientes e as sessões disponiveis.");
+             printf("\n-Insira abaixo os dados dos clientes e as sessÃµes disponiveis.");
 
 
-//Quantidade de sessões disponíveis no cinema. Uso de comando de saída, entrada, repetição e condicional   
-             printf("\n\n->Informe quantas sessões foram utilizadas:\n");  
-    do{ //Comando de repetição do e while, realiza os comandos e depois testa a condição
+//Quantidade de sessÃµes disponÃ­veis no cinema. Uso de comando de saÃ­da, entrada, repetiÃ§Ã£o e condicional   
+             printf("\n\n->Informe quantas sessÃµes foram utilizadas:\n");  
+    do{ //Comando de repetiÃ§Ã£o do e while, realiza os comandos e depois testa a condiÃ§Ã£o
     	     fflush(stdin); //Limpar o buffer do teclado 
     	     scanf("%d", &sessao); 
 
-       if(sessao != 2){   //Condição        
-    	     printf("<-----Não foi encontrado registros no nosso servidor a quantidade informada, insira novamente os dados.----->\n");}		
+       if(sessao != 2){   //CondiÃ§Ã£o        
+    	     printf("<-----NÃ£o foi encontrado registros no nosso servidor a quantidade informada, insira novamente os dados.----->\n");}		
       }
-    while(sessao != 2);	//Condição
+    while(sessao != 2);	//CondiÃ§Ã£o
    
    
-//Informações do filme. Uso de comando de saída, entrada, repetição e condicional
+//InformaÃ§Ãµes do filme. Uso de comando de saÃ­da, entrada, repetiÃ§Ã£o e condicional
             printf("\n->Informe o nome do filme assistido:\n");
-    do{	//Comando de repetição
+    do{	//Comando de repetiÃ§Ã£o
             fflush(stdin); 
             gets(filme); 
             
        if(strcmp(filme,"")==0){ //Compara se tem campos vazios. 
             printf("<-----Nome invalido, tente novamente.----->\n");}   
       }
-    while(strcmp(filme,"")==0); //Condição
+    while(strcmp(filme,"")==0); //CondiÃ§Ã£o
     
     
-//Quantidade de pessoas que assistiram o filme. Uso de comando de saída, entrada, repetição e condicional     
+//Quantidade de pessoas que assistiram o filme. Uso de comando de saÃ­da, entrada, repetiÃ§Ã£o e condicional     
             printf("\n->Quantidade de pessoas que assistiram o filme:\n");
-    do{  //Comando de repetição do e while, realiza os comandos e depois testa a condição
+    do{  //Comando de repetiÃ§Ã£o do e while, realiza os comandos e depois testa a condiÃ§Ã£o
             fflush(stdin); 
 	        scanf("%d", &total_expectadores);
 			 
-       if(total_expectadores < 10) //Condição
-			printf("\n<-----Número de expectadores negado! Tente novamente!----->\n");          
+       if(total_expectadores < 10) //CondiÃ§Ã£o
+			printf("\n<-----NÃºmero de expectadores negado! Tente novamente!----->\n");          
       }
-    while(total_expectadores < 10); //Condição
+    while(total_expectadores < 10); //CondiÃ§Ã£o
     
     
-//Inforamar abaixo o sexo do indíviduo e incrementos. Uso de comando de saída, entrada, repetição e condicional 
+//Inforamar abaixo o sexo do indÃ­viduo e incrementos. Uso de comando de saÃ­da, entrada, repetiÃ§Ã£o e condicional 
     for(i = 1; i <= total_expectadores; i++){ 
-    	do{ //Comando de repetição do e while, realiza os comandos e depois testa a condição
+    	do{ //Comando de repetiÃ§Ã£o do e while, realiza os comandos e depois testa a condiÃ§Ã£o
             printf("\n->Informe o sexo do cliente. M para homem, F para mulher:");
             fflush(stdin); //Limpar o buffer do teclado
             scanf("%s", &sexo);
        
-	   if(sexo != 'M' && sexo != 'F')  //Condição  
+	   if(sexo != 'M' && sexo != 'F')  //CondiÃ§Ã£o  
             printf("<-----Formato invalido!----->");
 	      }  
-	while(sexo != 'M' && sexo != 'F'); //Condição
+	while(sexo != 'M' && sexo != 'F'); //CondiÃ§Ã£o
 	
 
-//Entrada dos dados da idade das pessoas. Uso de comando de saída, entrada, repetição e condicional  
-    do{ //Comando de repetição do e while, realiza os comandos e depois testa a condição
-    	   printf("Informe a idade do cliente para fazermos as verificações da faixa etária do cinema:");
+//Entrada dos dados da idade das pessoas. Uso de comando de saÃ­da, entrada, repetiÃ§Ã£o e condicional  
+    do{ //Comando de repetiÃ§Ã£o do e while, realiza os comandos e depois testa a condiÃ§Ã£o
+    	   printf("Informe a idade do cliente para fazermos as verificaÃ§Ãµes da faixa etÃ¡ria do cinema:");
     	   fflush(stdin); 
     	   scanf("%d", &idade);
     	
-       if(idade<3 || idade>100) //Condição
+       if(idade<3 || idade>100) //CondiÃ§Ã£o
            printf("<-----Formato incorreto, tente novamente:----->");
 	}
-    while(idade<3 || idade>100); //Comando de repetição
+    while(idade<3 || idade>100); //Comando de repetiÃ§Ã£o
     
 
-//Verificação de quantos homens ou mulheres são de maiores e icrementos.
-        if(sexo == 'M'){ //Condição
+//VerificaÃ§Ã£o de quantos homens ou mulheres sÃ£o de maiores e icrementos.
+        if(sexo == 'M'){ //CondiÃ§Ã£o
         	  quantidadeM++; //incremento
 		}    
-        else{ //Condição 2
+        else{ //CondiÃ§Ã£o 2
         	  quantidadeF++; //incremento
 		}
 		
-		if(sexo == 'M'){ //Condição
+		if(sexo == 'M'){ //CondiÃ§Ã£o
 			
 			maioridadeM++; //incremento
 		}
-		else{ //Condição 2
+		else{ //CondiÃ§Ã£o 2
 			maioridadeF++; //incremento	
 		}
 
  
- //Diferenciação da faixa etária das pessoas no cinema e incrementos.  
+ //DiferenciaÃ§Ã£o da faixa etÃ¡ria das pessoas no cinema e incrementos.  
         if(idade >= 3 && idade <= 13){
 		      crianca++;} //incremento
 			  
-		else if(idade >= 14 && idade <= 17){ //Condição
+		else if(idade >= 14 && idade <= 17){ //CondiÃ§Ã£o
               adolescente++;}  //incremento
 			    
-        else if(idade >= 18 && idade <= 64){ //Condição
+        else if(idade >= 18 && idade <= 64){ //CondiÃ§Ã£o
               adulto++;} //incremento
 			  
-		else if(idade >= 65 && idade <= 100){ //Condição
+		else if(idade >= 65 && idade <= 100){ //CondiÃ§Ã£o
 		      idoso++;}	 //incremento 
     }
     
@@ -137,16 +137,16 @@ char sexo, filme[77]; //Variáveis do tipo caractere %s
 //Limpa a tela
 	system("cls");
 	
-//Informações na tela 2, uso de comandos de saída
+//InformaÃ§Ãµes na tela 2, uso de comandos de saÃ­da
 
-	          printf("Informações na tela da faixa etária frequentadora e o nome do filme!!\n");
+	          printf("InformaÃ§Ãµes na tela da faixa etÃ¡ria frequentadora e o nome do filme!!\n");
 	          
 	          printf("|--------------------------------------------------------------------------------------->|\n");
-              printf("\nO nome do filme assistido nas sessões foi %s.\n", filme);	
+              printf("\nO nome do filme assistido nas sessÃµes foi %s.\n", filme);	
 	          
 	          printf("\n#Qunatidade de pessoas do sexo masculino: %d", quantidadeM);
 	          printf("\n#Quantidade de pessoas do sexo feminino: %d", quantidadeF);
-	          printf("\n\n#Quantidade de crianças: %d\n", crianca);
+	          printf("\n\n#Quantidade de crianÃ§as: %d\n", crianca);
 	          printf("\n#Quantidade de adolescente: %d\n", adolescente);
 	          printf("\n#Quantidade de adultos: %d\n", adulto);
 	          printf("\n#Quantidade de idosos: %d\n\n", idoso);
@@ -163,8 +163,8 @@ char sexo, filme[77]; //Variáveis do tipo caractere %s
 //Limpa a tela
 	system("cls");
 	
-//Informações na tela 3, uso de comandos de saída
-	          printf("-->Diferença do sexo em nossas sessões:\n\n");
+//InformaÃ§Ãµes na tela 3, uso de comandos de saÃ­da
+	          printf("-->DiferenÃ§a do sexo em nossas sessÃµes:\n\n");
 	          
 	          printf("|--------------------------------------------------------------------------------------->|\n\n");
 	          
@@ -181,6 +181,6 @@ char sexo, filme[77]; //Variáveis do tipo caractere %s
 //Pause doo programa	
 	system("pause");	
 	
-//Retorno da função	
+//Retorno da funÃ§Ã£o	
 	return 0;
 }
